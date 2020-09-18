@@ -4,7 +4,7 @@ final class Parser {
     let parser: OpaquePointer
 
     /// Creates a new parser object.
-    init(options: Options) {
+    init(options: Options = []) {
         parser = cmark_parser_new(options.rawValue)
     }
 
@@ -26,7 +26,7 @@ final class Parser {
     /// Parse a CommonMark document.
     ///
     /// - Returns: root to a tree of nodes.
-    func parse(document: String, options: Options) -> Node {
+    func parse(document: String, options: Options = []) -> Node {
         Node(node: cmark_parse_document(document, document.utf8.count, options.rawValue))
     }
 }

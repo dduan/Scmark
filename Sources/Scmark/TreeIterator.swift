@@ -6,22 +6,21 @@ import Ccmark
 /// first descend to a child node, if there is one.  When there is no
 /// child, the iterator will go to the next sibling.  When there is no
 /// next sibling, the iterator will return to the parent (but with
-/// a 'cmark_event_type' of `Event.exit`).  The iterator will
-/// return `Event.done` when it reaches the root node again.
-/// One natural application is an HTML renderer, where an `ENTER` event
-/// outputs an open tag and an `.exit` event outputs a close tag.
-/// An iterator might also be used to transform an AST in some systematic
-/// way, for example, turning all level-3 headings into regular paragraphs.
+/// a `Event.exit`). The iterator will return `Event.done` when it reaches the
+/// root node again. One natural application is an HTML renderer, where an
+///`ENTER` event outputs an open tag and an `.exit` event outputs a close tag.
+/// An iterator might also be used to transform an AST in some systematic way,
+//for example, turning all level-3 headings into regular paragraphs.
 ///
 ///     func example(root: Node) {
-///         var event: NodeIterator.Event = .none
-///         let iter = NodeIterator(root)
+///         var event: TreeIterator.Event?
+///         let iter = TreeIterator(root)
 ///         repeat {
 ///             event = iter.next()
 ///             let node = iter.node()
 ///
 ///             // do things with `event` and `node`
-///         } while event != .none
+///         } while event != nil
 ///     }
 ///
 /// Iterators will never return `.exit` events for leaf nodes, which are nodes
@@ -38,7 +37,7 @@ import Ccmark
 ///
 /// Nodes must only be modified after an `.exit` event, or an `.enter` event for
 /// leaf nodes.
-class NodeIterator {
+class TreeIterator {
     var iter: OpaquePointer
 
     /// Creates a new iterator starting at 'root'. The current node and event

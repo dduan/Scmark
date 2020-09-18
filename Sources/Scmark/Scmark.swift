@@ -15,11 +15,11 @@ func markdownToHTML(_ text: String, options: Options = []) -> String {
 /// * Bits 0-7 contain the patchlevel.
 ///
 /// In hexadecimal format, the number 0x010203 represents version 1.2.3.
-func version() -> Int {
+func cmarkVersion() -> Int {
     Int(cmark_version())
 }
 
 /// The library version string for runtime checks.
-func versionString() -> String {
+func cmarkVersionString() -> String {
     String(cString: cmark_version_string())
 }
