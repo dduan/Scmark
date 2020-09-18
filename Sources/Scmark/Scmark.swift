@@ -4,7 +4,7 @@ import Ccmark
 /// 'len') from CommonMark Markdown to HTML, returning a null-terminated,
 /// UTF-8-encoded string. It is the caller's responsibility
 /// to free the returned buffer.
-func markdownToHTML(_ text: String, options: Options = []) -> String {
+public func markdownToHTML(_ text: String, options: Options = []) -> String {
     String(cString: cmark_markdown_to_html(text, text.utf8.count, options.rawValue))
 }
 
@@ -15,11 +15,11 @@ func markdownToHTML(_ text: String, options: Options = []) -> String {
 /// * Bits 0-7 contain the patchlevel.
 ///
 /// In hexadecimal format, the number 0x010203 represents version 1.2.3.
-func cmarkVersion() -> Int {
+public func cmarkVersion() -> Int {
     Int(cmark_version())
 }
 
 /// The library version string for runtime checks.
-func cmarkVersionString() -> String {
+public func cmarkVersionString() -> String {
     String(cString: cmark_version_string())
 }

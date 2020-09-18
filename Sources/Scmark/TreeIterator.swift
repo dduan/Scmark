@@ -1,5 +1,8 @@
 import Ccmark
 
+/// Low-level mechanism to visit the tree-representation of a document.
+/// It's implemented directly with cmark's API.
+///
 /// An iterator will walk through a tree of nodes, starting from a root
 /// node, returning one node at a time, together with information about
 /// whether the node is being entered or exited.  The iterator will
@@ -37,12 +40,12 @@ import Ccmark
 ///
 /// Nodes must only be modified after an `.exit` event, or an `.enter` event for
 /// leaf nodes.
-class TreeIterator {
+public class TreeIterator: IteratorProtocol {
     var iter: OpaquePointer
 
     /// Creates a new iterator starting at 'root'. The current node and event
     /// type are undefined until 'next()' is called for the first time.
-    init(root: Node) {
+    public init(root: Node) {
         iter = cmark_iter_new(root.node)
     }
 
@@ -52,30 +55,30 @@ class TreeIterator {
     }
 
     /// Advances to the next node and returns the event type (`Event.enter`
-    func next() -> Event? {
+    public func next() -> Event? {
         let event = cmark_iter_next(iter)
         return event == CMARK_EVENT_NONE ? nil : Event(rawValue: event)
     }
 
     /// - Returns: the current node.
-    func node() -> Node? {
+    public func node() -> Node? {
         if let node = cmark_iter_get_node(iter) {
-            return Node(node: node)
+            return Node(node: node, ownsNodeMemory: false)
         }
 
         return nil
     }
 
     /// - Returns: the current event type.
-    func event() -> Event? {
+    public func event() -> Event? {
         let event = cmark_iter_get_event_type(iter)
         return event == CMARK_EVENT_NONE ? nil : Event(rawValue: event)
     }
 
     /// - Returns: the root node.
-    func root() -> Node? {
+    public func root() -> Node? {
         if let node = cmark_iter_get_root(iter) {
-            return Node(node: node)
+            return Node(node: node, ownsNodeMemory: false)
         }
 
         return nil
@@ -84,11 +87,11 @@ class TreeIterator {
     /// Resets the iterator so that the current node is 'current' and
     /// the event type is 'Event'. The new current node must be a
     /// descendant of the root node or the root node itself.
-    func reset(node: Node, event: Event) {
+    public func reset(node: Node, event: Event) {
         cmark_iter_reset(iter, node.node, event.rawValue)
     }
 
-    enum Event: RawRepresentable {
+    public enum Event: Equatable {
         case done
         case enter
         case exit

@@ -1,6 +1,6 @@
 import Ccmark
 
-enum NodeType: RawRepresentable {
+public enum NodeType: Equatable {
     // Block
     case document
     case blockQuote
@@ -12,7 +12,6 @@ enum NodeType: RawRepresentable {
     case paragraph
     case heading
     case thematicBreak
-
 
     // Inline
     case text
@@ -26,10 +25,10 @@ enum NodeType: RawRepresentable {
     case link
     case image
 
-    static let firstBlock = NodeType.document
-    static let lastBlock = NodeType.thematicBreak
-    static let firstInline = NodeType.text
-    static let lastInline = NodeType.image
+    public static let firstBlock = NodeType.document
+    public static let lastBlock = NodeType.thematicBreak
+    public static let firstInline = NodeType.text
+    public static let lastInline = NodeType.image
 
     init?(rawValue: cmark_node_type) {
         switch rawValue {
