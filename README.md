@@ -18,7 +18,7 @@ Thin, faithful, but Swift-y wrappers for [cmark][].
 Swift Package Manager:
 
 ```swift
-.package(url: "https://github.com/dduan/TOMLDecoder", .branch("main"))
+.package(url: "https://github.com/dduan/Scmark", .branch("main"))
 ```
 
 
