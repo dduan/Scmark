@@ -2,6 +2,17 @@
 
 Thin, faithful, but Swift-y wrappers for [cmark][].
 
+## Supported Environment
+
+
+| Swift 5.3 |
+|-|
+|![macOS](https://github.com/dduan/Scmark/workflows/macOS/badge.svg)|
+|![Amazon Linux 2](https://github.com/dduan/Scmark/workflows/Amazon%20Linux%202/badge.svg)|
+|![Ubuntu Focal X](https://github.com/dduan/Scmark/workflows/Ubuntu%20Focal/badge.svg)|
+|![Ubuntu Bionic](https://github.com/dduan/Scmark/workflows/Ubuntu%20Bionic/badge.svg)|
+|![CentOS 8](https://github.com/dduan/Scmark/workflows/CentOS%208/badge.svg)|
+
 ## Installation
 
 Swift Package Manager:
