@@ -7,11 +7,11 @@ Thin, faithful, but Swift-y wrappers for [cmark][].
 
 | Swift 5.3 |
 |-|
-|![macOS](https://github.com/dduan/Scmark/workflows/macOS/badge.svg)|
-|![Amazon Linux 2](https://github.com/dduan/Scmark/workflows/Amazon%20Linux%202/badge.svg)|
-|![Ubuntu Focal X](https://github.com/dduan/Scmark/workflows/Ubuntu%20Focal/badge.svg)|
-|![Ubuntu Bionic](https://github.com/dduan/Scmark/workflows/Ubuntu%20Bionic/badge.svg)|
-|![CentOS 8](https://github.com/dduan/Scmark/workflows/CentOS%208/badge.svg)|
+|[![macOS](https://github.com/dduan/Scmark/workflows/macOS/badge.svg)](https://github.com/dduan/Scmark/actions?query=workflow%3AmacOS)|
+|[![Amazon Linux 2](https://github.com/dduan/Scmark/workflows/Amazon%20Linux%202/badge.svg)](https://github.com/dduan/Scmark/actions?query=workflow%3A%22Amazon+Linux+2%22)|
+|[![Ubuntu Focal](https://github.com/dduan/Scmark/workflows/Ubuntu%20Focal/badge.svg)](https://github.com/dduan/Scmark/actions?query=workflow%3A%22Ubuntu+Focal%22)|
+|[![Ubuntu Bionic](https://github.com/dduan/Scmark/workflows/Ubuntu%20Bionic/badge.svg)](https://github.com/dduan/Scmark/actions?query=workflow%3A%22Ubuntu+Bionic%22)|
+|[![CentOS 8](https://github.com/dduan/Scmark/workflows/CentOS%208/badge.svg)](https://github.com/dduan/Scmark/actions?query=workflow%3A%22CentOS+8%22)|
 
 ## Installation
 
