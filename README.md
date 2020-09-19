@@ -33,21 +33,26 @@ Scmark is a wrapper around the library part of [cmark][]. It provides:
 
 Scmark strives to provide good ergonomics for Swift users, while staying as
 close cmark's original interface as possible. Examples where APIs were adapted
-for Swift:
+for Swift are:
 
 - Names following Swift's [API Design Guidelines][].
-- Tree `Node`, `Parser`, and `TreeIterator` has object-oriented interfaces.
+- Tree `Node`, `Parser`, and `TreeIterator` has object-oriented interfaces
+  instead of C-style free functions for ergonomics as well as memory safety.
+- `TreeSequence` provides a `Sequence` interface (syntax sugar) for using
+  `TreeIterator`.
 - Enhance with type-safty: Whereas C uses an special enum case (e.g.
   `CMARK_EVENT_NONE`) to represent errors, Scmark replaces it with `Optional`.
   `Bool` in place of `int`s from C when it's appropirate, etc.
 
-Scmark ships with a copy of cmark, and has no extra dependencies.
+Scmark ships with a copy of cmark. It has no further dependencies.
 
 ## Usage
 
 ## License
 
-MIT. See `LICENSE.md`.
+cmark's license is included as [Sources/Ccmark/COPYING](Sources/Ccmark/COPYING)
+
+Scmark is released under MIT license. See [LICENSE.md](LICENSE.md).
 
 [cmark]: https://github.com/commonmark/cmark
 [API Design Guidelines]: https://swift.org/documentation/api-design-guidelines
