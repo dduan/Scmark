@@ -43,7 +43,7 @@ for Swift are:
   `CMARK_EVENT_NONE`) to represent errors, Scmark replaces it with `Optional`.
   `Bool` in place of `int`s from C when it's appropirate, etc.
 
-Scmark ships with a copy of cmark. It has no further dependencies.
+Scmark ships with a copy of [cmark 0.29.0][]. It has no further dependencies.
 
 ## Usage
 
@@ -55,3 +55,4 @@ Scmark is released under MIT license. See [LICENSE.md](LICENSE.md).
 
 [cmark]: https://github.com/commonmark/cmark
 [API Design Guidelines]: https://swift.org/documentation/api-design-guidelines
+[cmark 0.29.0]: https://github.com/commonmark/cmark/releases/tag/0.29.0
