@@ -12,6 +12,7 @@ Thin, faithful, but Swift-y wrappers for [cmark][].
 |[![Ubuntu Focal](https://github.com/dduan/Scmark/workflows/Ubuntu%20Focal/badge.svg)](https://github.com/dduan/Scmark/actions?query=workflow%3A%22Ubuntu+Focal%22)|
 |[![Ubuntu Bionic](https://github.com/dduan/Scmark/workflows/Ubuntu%20Bionic/badge.svg)](https://github.com/dduan/Scmark/actions?query=workflow%3A%22Ubuntu+Bionic%22)|
 |[![CentOS 8](https://github.com/dduan/Scmark/workflows/CentOS%208/badge.svg)](https://github.com/dduan/Scmark/actions?query=workflow%3A%22CentOS+8%22)|
+|[![Windows 10](https://github.com/dduan/Scmark/workflows/Windows%2010/badge.svg)](https://github.com/dduan/Scmark/actions?query=workflow%3A%22Windows+10%22)|
 
 ## Installation
 
