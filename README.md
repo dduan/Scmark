@@ -39,9 +39,9 @@ for Swift are:
 - Tree `Node`, `Parser`, and `TreeIterator` has object-oriented interfaces
   instead of C-style free functions for ergonomics as well as memory safety.
 - `Tree` is a `Sequence` interface (syntax sugar) for using `TreeIterator`.
-- Enhancement with type-safty: Whereas C uses an special enum case (e.g.
+- Enhancement with type-safety: Whereas C uses an special enum case (e.g.
   `CMARK_EVENT_NONE`) to represent errors, Scmark replaces it with `Optional`.
-  `Bool` in place of `int`s from C when it's appropirate, etc.
+  `Bool` in place of `int`s from C when it's appropriate, etc.
 
 Scmark ships with a copy of [cmark 0.29.0][]. It has no further dependencies.
 
