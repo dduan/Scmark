@@ -10,6 +10,7 @@ let package = Package(
     targets: [
         .target(
             name: "Ccmark",
+            exclude: ["COPYING"],
             resources: [
                 .process("src/scanners.re"),
                 .process("src/make_entities_inc.py"),
