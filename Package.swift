@@ -4,6 +4,12 @@ import PackageDescription
 
 let package = Package(
     name: "Scmark",
+    platforms: [
+        .macOS(.v10_14),
+        .iOS(.v11),
+        .watchOS(.v3),
+        .tvOS(.v12),
+    ],
     products: [
         .library(name: "Scmark", targets: ["Scmark"]),
     ],
