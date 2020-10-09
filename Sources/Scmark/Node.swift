@@ -102,8 +102,8 @@ public class Node {
     /// - Returns: the URL of a link or image 'node', or an empty string
     /// if no URL is set.  Returns NULL if called on a node that is
     /// not a link or image.
-    public func url() -> String {
-        String(cString: cmark_node_get_url(node))
+    public func url() -> String? {
+        cmark_node_get_url(node).map(String.init(cString:))
     }
 
     /// - Returns: the title of a link or image 'node', or an empty
